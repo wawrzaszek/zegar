@@ -26,8 +26,8 @@ function doPrzerwy() {
 
     let lastH, lastM;
     let czas = new Date();
-    let godzina = czas.getHours();
-    let minuta = czas.getMinutes();
+    let godzina = czas.getHours().toString().padStart(2, '0');
+    let minuta = czas.getMinutes().toString().padStart(2, '0');
     let czasStr = `${godzina}:${minuta}`;
 
     tab.forEach(e => {
@@ -37,6 +37,8 @@ function doPrzerwy() {
             lastM = m;
         }
     })
+
+    console.log(lastH, lastM);
 }
 
 setInterval(() => {
